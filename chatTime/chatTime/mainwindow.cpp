@@ -69,7 +69,6 @@ void MainWindow::recvMsg()
     QDataStream in(&block,QIODevice::ReadOnly);
     in.setVersion(QDataStream::Qt_4_6);
     in>>size>>msgType;
-    qDebug()<<"Dadadadadada";
 
     if("MSG_ALL_USER_ONLINE"==msgType)
     {

@@ -9,8 +9,11 @@ loginDialog::loginDialog(QWidget *parent) :
     ui->setupUi(this);
 
     // for test, to be deleted
+    this->setWindowTitle("Login");
     ui->idLineEdit->setText("12345");
     ui->pwLineEdit->setText("12345");
+    ui->ipLineEdit->setText("127.0.0.1");
+    ui->portLineEdit->setText("12345");
 
     settingFlag = true;
     ip.clear();
@@ -51,7 +54,7 @@ void loginDialog::changeEvent(QEvent *e)
 
 void loginDialog::loginSystem()
 {
-    qDebug()<<"DAAAAAAAAAAAAAAA";
+//    for test,set user accout
     ip = "127.0.0.1";
     port = "12345";
 
@@ -84,7 +87,7 @@ void loginDialog::loginSystem()
              out.device()->seek(0);
              out<<(quint16)(block.size()-sizeof(quint16));
              tcpSocket->write(block);
-             qDebug()<<"qqqqqqqqqqqqqqqqq";
+//             qDebug()<<"qqqqqqqqqqqqqqqqq";
         }
     }
 
