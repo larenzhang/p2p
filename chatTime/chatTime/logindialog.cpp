@@ -149,7 +149,8 @@ void loginDialog::receiveSockets()
     QDataStream in(&block,QIODevice::ReadOnly);
     quint16 dataGramSize;
     QString msgType;
-    in>>dataGramSize>>msgType;
+    QString user_name;
+    in>>dataGramSize>>msgType>>user_name;
 
     if("MSG_ID_NOTEXIST"==msgType)
     {
@@ -158,7 +159,7 @@ void loginDialog::receiveSockets()
     else if("MSG_LOGIN_SUCCESS"==msgType)
     {
         mainWindow = new MainWindow(id,ip,port);
-        mainWindow->setWindowTitle(tr("ChatTime"));
+        mainWindow->setWindowTitle("ChatTime-"+user_name);
         mainWindow->show();
         this->close();
     }

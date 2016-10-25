@@ -129,7 +129,7 @@ void TcpConThread::on_Ready_Read()
                 QDataStream out(&block,QIODevice::WriteOnly);
                 out.setVersion(QDataStream::Qt_4_6);
                 QString msgType="MSG_LOGIN_SUCCESS";
-                out<<(quint16)0<<msgType;
+                out<<(quint16)0<<msgType<<db->strListUser.at(2);
                 out.device()->seek(0);
                 out<<(quint16)(block.size()-sizeof(quint16));
                 tcpSocket->write(block);

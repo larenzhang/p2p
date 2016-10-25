@@ -60,7 +60,7 @@ void registerDialog::confirmRegisterInfo()
     }
     else
     {
-        qDebug()<<"dd"<<id<<" "<<name<<password<< " "<<ip<<" "<<port;
+//        qDebug()<<"dd"<<id<<" "<<name<<password<< " "<<ip<<" "<<port;
         if(1)
         {
             tcpSocket->abort();
@@ -93,7 +93,7 @@ void registerDialog::receiveSockets()
     }
     else if("MSG_CLIENT_REGISTER_SUCCESS"==msgType)
     {
-        qDebug()<<"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"<<(quint16)port.toUInt()+1;
+//        qDebug()<<"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"<<(quint16)port.toUInt()+1;
         QString msgType="MSG_CLIENT_REGISTER_SUCCESS";
         QByteArray block;
         QDataStream out(&block,QIODevice::WriteOnly);
