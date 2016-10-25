@@ -1,0 +1,15 @@
+*.dll
+*.o
+chatTime/chatTimeServer/Makefile.Debug
+*.exe
+*.Release
+chatTime/chatTime/Makefile.Release
+*.user
+chatTime/chatTime/chatTime.pro.user.-1
+*.user
+chatTime/chatTimeServer/ui_mainwindow.h
+chatTime/chatTimeServer/release/
+chatTime/chatTimeServer/debug/
+chatTime/chatTime/debug/
+chatTime/chatTime/release/
+chatTime/chatTimeServer/Makefile.Debug	

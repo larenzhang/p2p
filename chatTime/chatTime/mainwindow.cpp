@@ -50,7 +50,7 @@ void MainWindow::init()
     out.setVersion(QDataStream::Qt_4_6);
     out<<(quint16)0<<msgType<<id;
     out.device()->seek(0);
-    qDebug()<<"porrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrt"<<(quint16)port.toUInt()+1;
+//    qDebug()<<"porrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrt"<<(quint16)port.toUInt()+1;
     udpSocket->writeDatagram(block.data(),block.size(),QHostAddress(ip),(quint16)port.toUInt()+1);
     connect(this->udpSocket,SIGNAL(readyRead()),this,SLOT(recvMsg()));
 }
@@ -69,6 +69,8 @@ void MainWindow::recvMsg()
     QDataStream in(&block,QIODevice::ReadOnly);
     in.setVersion(QDataStream::Qt_4_6);
     in>>size>>msgType;
+    qDebug()<<"Dadadadadada";
+
     if("MSG_ALL_USER_ONLINE"==msgType)
     {
         qDebug()<<"get all user_online";

@@ -8,6 +8,10 @@ loginDialog::loginDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // for test, to be deleted
+    ui->idLineEdit->setText("12345");
+    ui->pwLineEdit->setText("12345");
+
     settingFlag = true;
     ip.clear();
     port.clear();
@@ -47,6 +51,10 @@ void loginDialog::changeEvent(QEvent *e)
 
 void loginDialog::loginSystem()
 {
+    qDebug()<<"DAAAAAAAAAAAAAAA";
+    ip = "127.0.0.1";
+    port = "12345";
+
     if(ip.isEmpty() || port.isEmpty())
     {
         QMessageBox::warning(NULL,tr("提示"),tr("请先设置IP和端口"));
