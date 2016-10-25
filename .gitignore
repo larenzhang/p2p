@@ -13,3 +13,4 @@ chatTime/chatTimeServer/debug/
 chatTime/chatTime/debug/
 chatTime/chatTime/release/
 chatTime/chatTimeServer/Makefile.Debug	
+*.Debug
