@@ -16,7 +16,7 @@ MainWindow::MainWindow(QString id, QString ip, QString port, QWidget *parent) :
     this->port=port;
     this->init();
     ui->setupUi(this);
-    qDebug()<<"fffff"<<ip<<id<<port;
+//    qDebug()<<"fffff"<<ip<<id<<port;
 
     bool flag =  connect(ui->userListWidget,SIGNAL(itemDoubleClicked(QListWidgetItem*)),this,SLOT(userListWidget_itemDoubleClicked(QListWidgetItem*)));
     qDebug("the flag is %d",flag);
@@ -74,6 +74,7 @@ void MainWindow::recvMsg()
     {
         qDebug()<<"get all user_online";
         in>>idList>>nameList;
+        ui->userListWidget->clear();
         for(int i=0;i<idList.count();i++)
         {
             QString itemString;
