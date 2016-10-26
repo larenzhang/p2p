@@ -145,6 +145,22 @@ void SqliteDB::updateUserIp(QString id, QString ip)
     this->closeDB();
 }
 
+void SqliteDB::updateUserPort(QString id, quint16 port)
+{
+    this->connectDB();
+    QSqlQuery query;
+    strListUser.clear();
+
+    query.prepare("update user set port=? where id=?");
+    query.addBindValue(port);
+    query.addBindValue(id);
+    if(!(query.exec()))
+    {
+         QMessageBox::critical(NULL,"exec","exec failed");
+    }
+    this->closeDB();
+}
+
 void SqliteDB::getUserAllOnline()
 {
     this->connectDB();

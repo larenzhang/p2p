@@ -135,6 +135,7 @@ void TcpConThread::on_Ready_Read()
                 tcpSocket->write(block);
                 db->updateUserLogStat(id,"1");
                 db->updateUserIp(id,tcpSocket->peerAddress().toString());
+                db->updateUserPort(id,tcpSocket->peerPort());
             }
 
             QString msgType="MSG_SYSTEM_UPDATE_LOGSTAT";

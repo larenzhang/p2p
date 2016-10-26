@@ -28,6 +28,7 @@ public:
     int  insertNewUser(QString id,QString password,QString name,QString ip,QString port);
     void getUserAllOnline();
     void updateUserIp(QString id,QString ip);
+    void updateUserPort(QString id, quint16 port);
     void showAll();
 
 private:

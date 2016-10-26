@@ -43,7 +43,8 @@ void MainWindow::changeEvent(QEvent *e)
 void MainWindow::init()
 {
     udpSocket=new QUdpSocket(this);
-    udpSocket->bind(6666);
+    bool ifBind = udpSocket->bind(6666);
+    qDebug()<<"if Bind:"<<ifBind;
     QString msgType="MSG_CLIENT_NEW_CONN";
     QByteArray block;
     QDataStream out(&block,QIODevice::WriteOnly);
